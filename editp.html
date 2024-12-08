@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganesh Udutha - Cybersecurity Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+     body {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+ .cert-card:hover {
+      transform: scale(1.05);
+    }
+   .cert-card {
+      border: 2px solid #4CAF50;
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+ .certifications-container {
+    overflow: hidden;
+    height: 16rem; /* Adjust height as needed */
+  }
+
+  .certifications-wrapper {
+    animation: scrollUp 15s linear infinite;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Gap between certifications */
+  }
+
+  @keyframes scrollUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .cert-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    min-height: 200px; /* Uniform height for cards */
+height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #1e293b, #4b5563); /* Subtle gradient */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cert-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  }
+
+    .skills-container {
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+  }
+    .skills-wrapper {
+      display: flex;
+      animation: slideSkills 20s linear infinite;
+gap: 1rem; 
+    }
+    @keyframes slideSkills {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+  .skill-item {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Modern Gradient Backgrounds */
+    background: linear-gradient(135deg, #1d4ed8, #9333ea);
+  }
+  .skill-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  }
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(to right, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.8rem 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header .profile-photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #FFD700; /* Golden border */
+    }
+    .header nav a {
+      color: #FFF;
+      font-weight: 500;
+      margin: 0 1rem;
+      transition: color 0.3s ease;
+    }
+    .header nav a:hover {
+      color: #FFD700; /* Golden hover effect */
+    }
+    .mobile-menu-button {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .mobile-menu-button {
+        display: block;
+        color: #FFF;
+      }
+    }
+    .mobile-nav {
+      display: none;
+    }
+    .mobile-nav.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(31, 41, 55, 0.95);
+      padding: 1rem;
+      z-index: 40;
+    }
+    .mobile-nav a {
+      color: #FFF;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+ <!-- Modern Sticky Header -->
+  <header class="header">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Profile and Name -->
+      <div class="flex items-center">
+        <img src="Profile.jpg" alt="Ganesh Udutha" class="profile-photo">
+        <h1 class="text-xl font-bold ml-3 text-white">Ganesh Udutha</h1>
+      </div>
+      <!-- Navigation -->
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-button" onclick="toggleMenu()">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center text-center">
+    <h2 class="text-5xl font-extrabold animate__animated animate__fadeInDown">Cybersecurity Analyst</h2>
+    <p class="text-lg mt-4 animate__animated animate__fadeInUp">
+      Expert in VA, VAPT, MAPT | Top 10% TryHackMe Learner
+    </p>
+    <div class="mt-6">
+      <a href="#contact" class="px-6 py-3 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-300">Contact Me</a>
+      <a href="Ganesh_Udutha_Resume.pdf" class="ml-4 px-6 py-3 bg-gray-700 text-yellow-400 rounded hover:bg-gray-600">View Resume</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+<section id="about" class="py-16 bg-gray-800">
+  <div class="container mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">About Me</h3>
+    <!-- Typing Effect Container -->
+    <p id="typing-text" class="text-lg leading-relaxed">
+      </p>
+  </div>
+</section>
+
+<!-- Skills Section -->
+
+  <section id="skills" class="py-16 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Skills</h3>
+      <div class="skills-container">
+        <div class="skills-wrapper">
+
+      <!-- Technical Skills -->
+      <div class="skill-item">
+        <h4 class="font-bold">Vulnerability Assessment (VA)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Penetration Testing (VAPT)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">API Security Testing</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Web Application Security</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">OWASP Top 10 2021</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">CVE and CWE Identification</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">SQL Injection</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">NoSQL Injection</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Cross-Site Scripting (XSS)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Server-Side Request Forgery (SSRF)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Cross-Site Request Forgery (CSRF)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Server-Side Template Injection (SSTI)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">XML Injection</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Server-Side JavaScript Injection (SSJI)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Metasploit</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">OWASP ZAP</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Postman (API Testing)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Kali Linux</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Frida (MAPT)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Threat Detection & Analysis</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Burp Suite</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Nmap</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Wireshark</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Log Analysis & Reporting</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Python</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Core Java</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">R (Programming Language)</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">C++</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">C#</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">PHP</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">JavaScript</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Data Structures</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Computer Networking</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Critical Thinking</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Collaboration with Development Teams</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Problem Solving</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Report Writing</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Data Analysis</h4>
+      </div>
+      <div class="skill-item">
+        <h4 class="font-bold">Project Management</h4>
+      </div>
+        </div>
+      </div>
+    <div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-gray-800">
+  <div class="container mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 project-grid">
+      <!-- Project 1 -->
+      <div class="project-card relative bg-gray-700 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl">
+        <h4 class="font-bold text-lg text-yellow-400">MOTA v1 (Mobile Online Test Application)</h4>
+        <p class="text-sm text-gray-300 mt-2">
+          Android app for MCQ-based exams with real-time monitoring and backend integration.
+        </p>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card relative bg-gray-700 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl">
+        <h4 class="font-bold text-lg text-yellow-400">Air Shark</h4>
+        <p class="text-sm text-gray-300 mt-2">
+          IoT-based air quality monitoring with real-time data and predictive analysis.
+        </p>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-card relative bg-gray-700 p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl">
+        <h4 class="font-bold text-lg text-yellow-400">Caseguru</h4>
+        <p class="text-sm text-gray-300 mt-2">
+          MERN stack platform for customized mobile cases powered by AI.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>	
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-16 bg-gray-800">
+  <div class="container mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">Certifications</h3>
+    <div class="certifications-container overflow-hidden relative h-64">
+      <div class="certifications-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-scrollUp">
+        <!-- Certification Items -->
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Penetration Testing and Ethical Hacking</h4>
+          <p class="text-sm text-gray-300">Cybrary | Issued Jul 2024</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: CC-a5408b8c-8b00-4b09-9b98-829e1d148ef3</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Cyber Security and Privacy</h4>
+          <p class="text-sm text-gray-300">NPTEL | Issued Nov 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: NPTEL23CS127S642302873</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Ethical Hacking Essentials (EHE)</h4>
+          <p class="text-sm text-gray-300">EC-Council | Issued Jul 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: 235186</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Introduction to Cybersecurity</h4>
+          <p class="text-sm text-gray-300">Cisco | Issued May 2024</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">AI For India 2.0</h4>
+          <p class="text-sm text-gray-300">GUVI Geek Networks | Issued Aug 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: 293HjV19dh68X65057</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Cybersecurity Virtual Experience Program</h4>
+          <p class="text-sm text-gray-300">New York Jobs CEO Council | Issued Aug 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: ERzbSw3Hzu8uHn55A</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Practical Blue Team Internship</h4>
+          <p class="text-sm text-gray-300">Virtual Cyber Labs | Issued Aug 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: P2STRWTC</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Python</h4>
+          <p class="text-sm text-gray-300">GUVI Geek Networks | Issued Aug 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: 9Gr4R46vqB90215Q21</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Introduction to CIP</h4>
+          <p class="text-sm text-gray-300">OPSWAT Academy | Issued Jul 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: 18FvZ9xxeQ</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Postman API Fundamentals</h4>
+          <p class="text-sm text-gray-300">Postman | Issued Jul 2023</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Cyber Hygiene Practices</h4>
+          <p class="text-sm text-gray-300">InfoSec Awareness | Issued Apr 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: MeitY/ISEA/WCHP/028395</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Fundamentals of Information Security</h4>
+          <p class="text-sm text-gray-300">Infosys Springboard | Issued Apr 2023</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Hack Windows</h4>
+          <p class="text-sm text-gray-300">Udemy | Issued Apr 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: UC-e17b6dd0-4eee-4f75-842e-017127d5d69f</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Introduction to Cyber Security</h4>
+          <p class="text-sm text-gray-300">Infosys Springboard | Issued Apr 2023</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Android Bug Bounty Hunting</h4>
+          <p class="text-sm text-gray-300">EC-Council | Issued Jan 2023</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: 183398</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Ultimate Ethical Hacking</h4>
+          <p class="text-sm text-gray-300">Noble Work Foundation | Issued Dec 2022</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: UC-89ca6a5b-7b80-4662-bc4b-71834f937148</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">The Joy of Computing Using Python</h4>
+          <p class="text-sm text-gray-300">NPTEL | Issued Apr 2022</p>
+          <p class="text-sm text-yellow-400 mt-2">Credential ID: NPTEL22CS31S13890648</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Security Awareness Training</h4>
+          <p class="text-sm text-gray-300">InfoSec Institute | Issued Apr 2022</p>
+        </div>
+        <div class="cert-item bg-gray-700 p-4 rounded-lg shadow-lg">
+          <h4 class="font-bold text-yellow-400">Ethical Hacking</h4>
+          <p class="text-sm text-gray-300">Various Platforms | Multiple Dates</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-16 bg-gray-800">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Experience</h3>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-xl font-bold">Cyber Security Analyst</h4>
+          <p class="text-sm text-gray-400">Audix Technologies | Sep 2023 - Mar 2024</p>
+          <ul class="list-disc list-inside text-gray-300 mt-2">
+            <li>Conducted vulnerability assessments and penetration testing.</li>
+            <li>Performed SQL Injection, XSS, CSRF attacks, reducing risks by 30%.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-16 bg-gray-900">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6">Education</h3>
+      <div class="space-y-6 text-center">
+        <div>
+          <h4 class="text-xl font-bold">Master of Science in Cyber Security</h4>
+          <p class="text-sm text-gray-400">Amity University Rajasthan | Aug 2024 - May 2026</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold">Bachelor of Science in Computer Science</h4>
+          <p class="text-sm text-gray-400">SIES College | 2021 - 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
+      <p class="mb-2">📧 <a href="mailto:ganeshudutha486@gmail.com" class="hover:text-yellow-400">ganeshudutha486@gmail.com</a></p>
+      <p>📱 8433798844</p>
+      <div class="mt-4">
+        <a href="https://www.linkedin.com/in/ganesh-udutha/" class="mx-2 hover:text-yellow-400"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/GaneshUdutha2" class="mx-2 hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-4 text-center">
+    <p>&copy; 2024 Ganesh Udutha. All rights reserved.</p>
+  </footer>
+
+  <!-- Particles Configuration -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff" },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-nav');
+      menu.classList.toggle('open');
+    }
+  // Add 360-degree float effect
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // X position within the card
+      const y = e.clientY - rect.top; // Y position within the card
+      const xRatio = (x / rect.width - 0.5) * 2; // Normalize X ratio (-1 to 1)
+      const yRatio = (y / rect.height - 0.5) * 2; // Normalize Y ratio (-1 to 1)
+
+      // Apply 360-degree rotation based on cursor position
+      card.style.transform = `rotateY(${xRatio * 25}deg) rotateX(${-yRatio * 25}deg)`;
+      card.style.transition = 'transform 0.1s ease-out';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Reset to original state
+      card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      card.style.transition = 'transform 0.5s ease-in-out';
+    });
+  });
+
+  // Typing effect for the About Me section
+  const text = "I am Ganesh Udutha, a Cybersecurity Analyst passionate about safeguarding systems against evolving cyber threats. With a Bachelor's in Computer Science from SIES College and ongoing Master's in Cybersecurity at Amity University Rajasthan, I bring a blend of academic knowledge and hands-on experience.";
+  const typingTextElement = document.getElementById('typing-text');
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      typingTextElement.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 50); // Adjust typing speed (lower is faster)
+    }
+  }
+
+  // Start typing effect when the page loads
+  document.addEventListener("DOMContentLoaded", typeWriter);
+  </script>
+
+</body>
+</html>
