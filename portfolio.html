@@ -104,7 +104,7 @@ gap: 1rem;
     border-radius: 12px;
     white-space: nowrap;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 
     /* Modern Gradient Backgrounds */
     background: linear-gradient(135deg, #1d4ed8, #9333ea);
@@ -183,7 +183,7 @@ gap: 1rem;
     <div class="container mx-auto flex items-center justify-between">
       <!-- Profile and Name -->
       <div class="flex items-center">
-        <img src="Profile.jpg" alt="Ganesh Udutha" class="profile-photo">
+<img src="Profile.jpg" alt="Ganesh Udutha" class="profile-photo" loading="lazy">
         <h1 class="text-xl font-bold ml-3 text-white">Ganesh Udutha</h1>
       </div>
       <!-- Navigation -->
@@ -399,7 +399,7 @@ gap: 1rem;
 
 <!-- Certifications Section -->
 <section id="certifications" class="py-16 bg-gray-800">
-  <div class="container mx-auto text-center">
+  <div  class="container mx-auto text-center">
     <h3 class="text-3xl font-bold mb-6">Certifications</h3>
     <div class="certifications-container overflow-hidden relative h-64">
       <div class="certifications-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-scrollUp">
@@ -499,52 +499,98 @@ gap: 1rem;
 </section>
 
 
-  <!-- Experience Section -->
-  <section id="experience" class="py-16 bg-gray-800">
-    <div class="container mx-auto">
-      <h3 class="text-3xl font-bold text-center mb-6">Experience</h3>
-      <div class="space-y-6">
-        <div>
-          <h4 class="text-xl font-bold">Cyber Security Analyst</h4>
-          <p class="text-sm text-gray-400">Audix Technologies | Sep 2023 - Mar 2024</p>
-          <ul class="list-disc list-inside text-gray-300 mt-2">
-            <li>Conducted vulnerability assessments and penetration testing.</li>
-            <li>Performed SQL Injection, XSS, CSRF attacks, reducing risks by 30%.</li>
-          </ul>
-        </div>
+<!-- Experience Section -->
+<section id="experience" class="py-16 bg-gray-800">
+  <div class="container mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-6">Experience</h3>
+    <div class="space-y-6">
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h4 class="text-xl font-bold text-yellow-400">Cyber Security Analyst</h4>
+        <p class="text-sm text-gray-400 mt-2">Audix Technologies</p>
+        <p class="text-sm text-gray-300 mt-1">Sep 2023 - Mar 2024</p>
+        <ul class="list-disc list-inside text-gray-300 mt-4 space-y-2">
+          <li>Conducted comprehensive vulnerability assessments and penetration testing to enhance system security.</li>
+          <li>Performed advanced SQL Injection, XSS, and CSRF attacks, mitigating risks by 30% across systems.</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Education Section -->
-  <section id="education" class="py-16 bg-gray-900">
-    <div class="container mx-auto">
-      <h3 class="text-3xl font-bold text-center mb-6">Education</h3>
-      <div class="space-y-6 text-center">
-        <div>
-          <h4 class="text-xl font-bold">Master of Science in Cyber Security</h4>
-          <p class="text-sm text-gray-400">Amity University Rajasthan | Aug 2024 - May 2026</p>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold">Bachelor of Science in Computer Science</h4>
-          <p class="text-sm text-gray-400">SIES College | 2021 - 2024</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-800">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
-      <p class="mb-2">📧 <a href="mailto:ganeshudutha486@gmail.com" class="hover:text-yellow-400">ganeshudutha486@gmail.com</a></p>
-      <p>📱 8433798844</p>
-      <div class="mt-4">
-        <a href="https://www.linkedin.com/in/ganesh-udutha/" class="mx-2 hover:text-yellow-400"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/GaneshUdutha2" class="mx-2 hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+<!-- Education Section -->
+<section id="education" class="py-16 bg-gray-900">
+  <div class="container mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-6">Education</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h4 class="text-xl font-bold text-yellow-400">Master of Science in Cyber Security</h4>
+        <p class="text-sm text-gray-400 mt-2">Amity University Rajasthan</p>
+        <p class="text-sm text-gray-300 mt-1">Aug 2024 - May 2026</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h4 class="text-xl font-bold text-yellow-400">Bachelor of Science in Computer Science</h4>
+        <p class="text-sm text-gray-400 mt-2">SIES College</p>
+        <p class="text-sm text-gray-300 mt-1">2021 - 2024</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-800">
+  <div class="container mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-6">Get in Touch</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Contact Info -->
+      <div class="flex flex-col items-center justify-center bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h4 class="text-2xl font-semibold text-yellow-400 mb-4">Contact Details</h4>
+        <p class="text-sm text-gray-300 mb-2">📧 <a href="mailto:ganeshudutha486@gmail.com" class="text-yellow-400 hover:underline">ganeshudutha486@gmail.com</a></p>
+        <p class="text-sm text-gray-300 mb-4">📱 +91-8433798844</p>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/in/ganesh-udutha/" class="text-gray-400 hover:text-yellow-400"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://x.com/GaneshUdutha2" class="text-gray-400 hover:text-yellow-400"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+      </div>
+      <!-- Contact Form -->
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h4 class="text-2xl font-semibold text-yellow-400 mb-4">Send Me a Message</h4>
+        <form action="form.php" method="POST" class="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="w-full bg-gray-800 text-white p-3 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            class="w-full bg-gray-800 text-white p-3 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+          />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+            class="w-full bg-gray-800 text-white p-3 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full py-3 bg-yellow-400 text-gray-900 rounded-lg hover:bg-yellow-300 focus:ring-4 focus:ring-yellow-300 focus:outline-none"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 py-4 text-center">
@@ -556,7 +602,7 @@ gap: 1rem;
     particlesJS("particles-js", {
       "particles": {
         "number": {
-          "value": 80,
+          "value": 50,
           "density": { "enable": true, "value_area": 800 }
         },
         "color": { "value": "#ffffff" },
@@ -573,6 +619,7 @@ gap: 1rem;
       },
       "retina_detect": true
     });
+
     function toggleMenu() {
       const menu = document.getElementById('mobile-nav');
       menu.classList.toggle('open');
