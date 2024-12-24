@@ -134,21 +134,22 @@ gap: 1rem;
   white-space: nowrap; /* Prevent items from wrapping */
   height: 16rem; /* Adjust height as needed */
 }
-
 .certifications-wrapper {
-  display: inline-flex; /* Change to horizontal layout */
-  gap: 1.5rem; /* Gap between certifications */
-  animation: scrollHorizontal 30s linear infinite; /* Adjust speed */
+  animation: scrollUp 60s linear infinite; /* Slower speed: Increase duration */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-@keyframes scrollHorizontal {
+@keyframes scrollUp {
   from {
-    transform: translateX(0);
+    transform: translateY(100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 }
+
 
 .cert-item {
   flex: 0 0 auto; /* Ensure items don't shrink */
