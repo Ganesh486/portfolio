@@ -77,14 +77,12 @@ height: 100%;
   }
 
     .skills-container {
-      overflow-x: scroll; /* Enable horizontal scrolling */
-  white-space: nowrap; /* Ensure items don't wrap */
-
-    position: relative;
+      overflow: hidden;    
+      position: relative;
     padding: 2rem 0;
   }
     .skills-wrapper {
-  display: inline-flex; /* Horizontal layout */
+  display: flex; /* Horizontal layout */
       animation: slideSkills 20s linear infinite;
 gap: 1rem; 
     }
