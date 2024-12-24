@@ -32,7 +32,49 @@
       border-radius: 8px;
       transition: transform 0.3s ease-in-out;
     }
- 
+ .certifications-container {
+    overflow: hidden;
+    height: 16rem; /* Adjust height as needed */
+  }
+
+  .certifications-wrapper {
+    animation: scrollUp 60s linear infinite;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Gap between certifications */
+  }
+
+  @keyframes scrollUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .cert-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    min-height: 200px; /* Uniform height for cards */
+height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #1e293b, #4b5563); /* Subtle gradient */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cert-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  }
 
     .skills-container {
     overflow: hidden;
@@ -129,49 +171,6 @@ gap: 1rem;
       margin-bottom: 1rem;
       text-align: center;
     }
-.certifications-container {
-  overflow-x: scroll; /* Add horizontal scrolling */
-  white-space: nowrap; /* Prevent items from wrapping */
-  height: 16rem; /* Adjust height as needed */
-}
-.certifications-wrapper {
-  animation: scrollUp 60s linear infinite; /* Slower speed: Increase duration */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-@keyframes scrollUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-
-.cert-item {
-  flex: 0 0 auto; /* Ensure items don't shrink */
-  width: 250px; /* Adjust card width */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  color: white;
-  font-weight: bold;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #1e293b, #4b5563);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-}
 
 
   </style>
