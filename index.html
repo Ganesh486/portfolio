@@ -371,21 +371,29 @@ gap: 1rem;
 <!-- TryHackMe Badge Section -->
 <section id="tryhackme" class="py-16 bg-gray-800">
   <div class="container mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6">TryHackMe Profile</h3>
+
+    <h3 class="text-3xl font-bold mb-10">TryHackMe Profile</h3>
 
     <div class="flex justify-center">
-      <iframe 
-        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1252249"
-        style="border:none;"
-        width="350"
-        height="120"
-        loading="lazy">
-      </iframe>
+
+      <div class="bg-gray-900 p-8 rounded-xl shadow-2xl hover:shadow-yellow-400/20 transition duration-300">
+
+        <iframe 
+          src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1252249"
+          style="border:none;"
+          width="420"
+          height="150"
+          loading="lazy">
+        </iframe>
+
+        <p class="mt-4 text-gray-400 text-sm">
+          Ranked in Top Learners on TryHackMe Platform
+        </p>
+
+      </div>
+
     </div>
 
-    <p class="mt-4 text-gray-300">
-      Ranked in Top Learners on TryHackMe Platform
-    </p>
   </div>
 </section>
 
@@ -717,4 +725,5 @@ Forensics, OSINT.</li>
 
 </body>
 </html>
+
 
